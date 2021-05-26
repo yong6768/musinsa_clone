@@ -14,7 +14,6 @@ function Banner({image, link}: BannerProps) {
     background: `url(${image}) no-repeat center`
   }
 
-  console.log(image, link)
   return (
     <div style={BannerStyle}>
 
