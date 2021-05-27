@@ -1,16 +1,19 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Welcome from './domain/welcome/Welcom';
+import Magazine from './domain/magazines/Magazine';
 
 function Router() {
 
   return(
-    <div>
+    <Switch>
       <Route exact path="/" component={Welcome}/>
-    </div>
-  )
+      <Route path="/magazines/:type" component={Magazine}/>
 
+
+    </Switch>
+  )
 }
 
 export default Router;

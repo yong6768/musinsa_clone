@@ -12,6 +12,15 @@ body {
   margin: 0px;
 }
 
+input {
+  padding: 0px;
+  outline: none;
+}
+
+input[type="text"]{
+  text-indent: 3px;
+}
+
 ul, li {
   list-style: none;
 }
@@ -51,6 +60,62 @@ dl, ol, ul, dt, dd, p {
     display: block;
     padding: 23px 0 23px 0;
     background-color: #000000;
+
+    h1.title {
+      background: url('//image.musinsa.com/mfile_outsrc/img/logo-musinsa-magazine-white@2x.png') no-repeat center;
+      background-size: 255px auto;
+      margin: 0 0 0 20px;
+      display: block;
+      position: relative;
+      float: left;
+      width: 255px;
+      height: 19px;
+      text-indent: -10000000em;
+      top: 6px;
+    }
+
+    .search-wrapper {
+      margin-left: 19px;
+      position: relative;
+      float: left;
+
+      .search-input-wrapper {
+
+        .search-input {
+          width: 218px;
+          background: #fff;
+          height: 30px;
+          line-height: 32px;
+          box-sizing: content-box;
+          border: 1px solid #373737;
+        }
+      }
+    }
+
+
+    .gnb {
+      float: right;
+      margin-right: 32px;
+      line-height: 32px;
+
+      .gnb-list {
+        li {
+          font-size: 18px;
+          font-weight: bold;
+          float: left;
+          position: relative;
+          font-family: 'Malgun Gothic','맑은 고딕', sans-serif;
+
+          a {
+            padding: 0 9px;
+            display: inline-block;
+            line-height: 14px;
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+      }
+    }
   }
   
   .user-menu {
