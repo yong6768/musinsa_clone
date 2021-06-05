@@ -1,19 +1,12 @@
-import { Match } from '@testing-library/dom';
 import React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
+import Footer from '../../component/Footer';
 import Header from '../../component/Header';
 import { getDisplayFromMagazineType } from '../../utils/DataMapUtils';
 import Sidebar from '../welcome/component/Sidebar';
-import MagazineMainContent from './mainContent/MagazineMainContent';
+import MainContent from './mainContent/MainContent';
 
-type MagazineProps = {
-  type: string
-}
-
-function Magazine(props: RouteComponentProps<MagazineProps>) {
-  const magazineType = props.match.params.type
-  console.log(magazineType)
-
+function News() {
   return (
     <div>
       <Header/>
@@ -25,9 +18,9 @@ function Magazine(props: RouteComponentProps<MagazineProps>) {
             <Link to="/" className="bread-crumb">
               무신사
             </Link>
-            <Link to={`/magazines/${magazineType}`} className="bread-crumb">
+            {/* <Link to={`/magazines/${magazineType}`} className="bread-crumb">
               {getDisplayFromMagazineType(magazineType)}
-            </Link>
+            </Link> */}
           </div>
           <div className="bread-crumb-wrapper sub">
             aaa
@@ -36,11 +29,13 @@ function Magazine(props: RouteComponentProps<MagazineProps>) {
           
         </div>
 
-        <MagazineMainContent/>
+        <MainContent/>
+
+        <Footer/>
       </div>
     </div>
   )
 
 }
 
-export default Magazine;
+export default News;

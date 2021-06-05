@@ -10,6 +10,7 @@ html {
 
 body {
   margin: 0px;
+  font-size: 12px;
 }
 
 input {
@@ -28,6 +29,11 @@ ul, li {
 dl, ol, ul, dt, dd, p {
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .clearfix::before, .clearfix::after {
@@ -156,57 +162,6 @@ dl, ol, ul, dt, dd, p {
     border-right: 1px solid #dddddd;
     width: calc(100% - #{$main-right-width} - 2px);
     float: left;
-
-
-    .content-wrapper.tab.news {
-      .list-item {
-        padding: 15px 0;
-        border-bottom: 1px solid #dddddd;
-        width: 100%;
-        float: left;
-        font-size: 12px;
-
-        .articleImg {
-          width: 210px !important;
-          height: 140px !important;
-          background: #f1f1f1;
-          margin-right: 15px;
-          float: left;
-
-          a {
-            display: block;
-            height: 140px;
-          }
-        }
-
-        .articleInfo {
-          color: #b2b2b2;
-
-          .title {
-            font-size: 14px;
-            color: #000000;
-            font-weight: bold;
-          }
-
-          .subInfo {
-            margin-top: 8px;
-          }
-
-          .description {
-            height: 57px;
-            margin-top: 9px;
-            overflow: hidden;
-            word-wrap: break-word;
-            word-break: break-all;
-          }
-
-          a {
-            color: #b2b2b2;
-            text-decoration: none;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -257,7 +212,7 @@ dl, ol, ul, dt, dd, p {
   }
 }
 
-.content-wrapper {
+.content-wrapper, .news {
 
   .list-item:hover {
     background: #f3f3f3;
@@ -266,9 +221,111 @@ dl, ol, ul, dt, dd, p {
 
 
 
+////////////// footer
+
 .footer {
   border-top: 1px solid #dddddd;
   display:  table;
   clear: both;
   width: 100%;
+}
+
+
+////////////// magazine
+
+.bread-crumb-wrapper {
+  padding: 0 15px;
+  border-bottom: 1px solid #dddddd;
+  font-family: 'Musinsa', "gulim", "굴림",sans-serif;
+  line-height: 49px;
+
+  .bread-crumb {
+    margin-right: 8px;
+    font-size: 14px;
+    vertical-align: baseline;
+
+    &::before {
+      content: ">";
+      margin-right: 8px;
+    }
+
+    &:first-child::before {
+      content: "";
+      margin-right: 0;
+    }
+  }
+}
+
+.magazine-main-content {
+  .header {
+
+    .options {
+      padding: 18px 0 5px;
+      margin-left: 15px;
+
+      .cntLabel {
+        font-weight: bold;
+        font-family: gulim, sans-serif;
+      }
+    }
+  }
+}
+
+//// magazine -> news
+.magazine-main-content .news {
+  .section {
+    padding: 0 15px;
+  }
+
+
+}
+
+.news {
+  .list-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #dddddd;
+    width: 100%;
+    float: left;
+    font-size: 12px;
+
+    .articleImg {
+      width: 210px !important;
+      height: 140px !important;
+      background: #f1f1f1;
+      margin-right: 15px;
+      float: left;
+
+      a {
+        display: block;
+        height: 140px;
+      }
+    }
+
+    .articleInfo {
+      color: #b2b2b2;
+
+      .title {
+        font-size: 14px;
+        color: #000000;
+        font-weight: bold;
+      }
+
+      .subInfo {
+        margin-top: 8px;
+      }
+
+      .description {
+        height: 57px;
+        margin-top: 9px;
+        overflow: hidden;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+
+      a {
+        color: #b2b2b2;
+        text-decoration: none;
+      }
+    }
+  }
 }

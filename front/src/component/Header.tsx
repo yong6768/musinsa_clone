@@ -17,22 +17,22 @@ function makeGNB(name: string, url: string): GNB {
 function Header() {
 
   const gnbList = [
-    makeGNB('뉴스', '/magazines/news'),
-    makeGNB('구인', '/magazines/news'),
-    makeGNB('매거진', '/magazines/news'),
-    makeGNB('TV', '/magazines/news'),
-    makeGNB('룩북', '/magazines/news'),
-    makeGNB('스트립 스냅', '/magazines/news'),
-    makeGNB('브랜드 스냅', '/magazines/news'),
-    makeGNB('커뮤니티', '/magazines/news'),
-    makeGNB('스토어', '/magazines/news'),
+    makeGNB('뉴스', '/news'),
+    makeGNB('구인', '/news'),
+    makeGNB('매거진', '/news'),
+    makeGNB('TV', '/news'),
+    makeGNB('룩북', '/news'),
+    makeGNB('스트립 스냅', '/news'),
+    makeGNB('브랜드 스냅', '/news'),
+    makeGNB('커뮤니티', '/news'),
+    makeGNB('스토어', '/news'),
   ]
 
   return (
     <div className="top-header clearfix">
       <div className="main-menu">
         {/* title */}
-        <Link to="/magazines">
+        <Link to="/">
           <h1 className="title">MUSINSA</h1>
         </Link>
 

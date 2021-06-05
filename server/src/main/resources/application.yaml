@@ -12,3 +12,7 @@ spring:
       hibernate:
         temp:
           use_jdbc_metadata_defaults: false
+  thymeleaf:
+    check-template-location: true
+    suffix: .html
+    mode: HTML5
