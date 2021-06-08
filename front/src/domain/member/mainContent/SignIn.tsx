@@ -35,8 +35,8 @@ function SignIn() {
           <button className="submitBtn">로그인</button>
           <div className="login-help-feature">
             <div className="login-auto">
-              <input type="checkbox" className="auto-login-checkbox" name="autologin"/>
-              <label htmlFor="autologin" className="auto-login-label">
+              <input type="checkbox" className="auto-checkbox" name="autologin"/>
+              <label htmlFor="autologin" className="auto-label">
                 자동로그인
               </label>
             </div>
