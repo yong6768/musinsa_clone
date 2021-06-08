@@ -11,6 +11,7 @@ html {
 body {
   margin: 0px;
   font-size: 12px;
+  font-family: '-apple-system',HelveticaNeue,Roboto,"Noto Sans KR",helvetica,Gulim,sans-serif;
 }
 
 input {
@@ -54,6 +55,166 @@ a {
   float:right !important
 }
 
+.n-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  padding: 0 9px 0 9px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  font-size: 15px;
+  transition: border .2s ease-in-out;
+}
+
+.row {
+  flex-wrap: wrap;
+}
+
+//////////////////////// Member
+
+.member-wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+
+  .member-area-wrapper {
+    background-color: white;
+    min-width: 400px;
+    min-height: 100vh;
+
+    .member-area {
+      padding: 62px 45px 100px 45px;
+    }
+  }
+}
+
+.member-area {
+  .member-header {
+    height: 80px;
+
+    .header-area {
+      .title {
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+
+    .header-tab {
+      display: flex;
+      width: 375px;
+
+      .header-tab-link {
+        padding: 11px 10px 10px 10px;
+        font-weight: 700;
+        font-size: 16px;
+        color: #bbb;
+        text-align: center;
+        flex: 1 1;
+        border-bottom: 1px solid #bbb;
+        cursor: pointer;
+
+        &.active {
+          color: #000;
+          border-bottom: 2px solid #000;
+        }
+      }
+    }
+  }
+
+  .member-form {
+    display: flex;
+    justify-content: center;
+
+    .user, .anonymous {
+      width: 350px;
+
+      .n-input {
+        margin-top: 15px;
+      }
+
+      .submitBtn {
+        margin-top: 15px;
+        background-color: #000;
+        border: 1px solid #000;
+        color: #fff;
+        font-size: 18px;
+        width: 100%;
+        height: 50px;
+      }
+    }
+    
+  }
+
+  .login-help-feature {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 21px;
+    color: #aaa;
+
+    .login-auto {
+
+      .auto-login-checkbox {
+        display: none;
+      }
+
+      .auto-login-label {
+        display: inline-flex;
+        
+
+        &:before {
+          content: '';
+          border: 1px solid #ccc;
+          width: 18px;
+          height: 18px;
+          background: #f1f1f1;
+          border-radius: 100%;
+          display: block;
+          position: relative;
+          left: -3px;
+        }
+      }
+    }
+
+    .login-find {
+        
+      span {
+        display: inline-block;
+        width: 1px;
+        height: 14px;
+        background-color: #d8d8d8;
+        vertical-align: middle;
+        padding-top: 5px;
+        top: -2px;
+      }
+
+      a {
+        padding: 5px 10px;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  .login-guide-text {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 40px;
+    text-align: center;
+
+    a {
+      margin-left: 4px;
+      color: #0078ff;
+    }
+  }
+}
+
+//////////////////////// header
 
 .top-header {
   min-width: $header-min-width;
@@ -126,7 +287,45 @@ a {
   
   .user-menu {
     width: 100%;
-    height: 53px;
+    height: 35px;
+    font-size: 14px;
+
+    .user-menu-list {
+      margin: 18px 15px 18px 20px;
+
+      li {
+        line-height: 14px;
+        height: 14px;
+        margin-left: -4px;
+        display: inline-block;
+        zoom: 1;
+        border-left: 1px solid #dddddd;
+
+        a {
+          padding: 0 10px;
+          display: block;
+        }
+
+        &.loginBtn {
+          width: 148px;
+          height: 28px;
+          text-align: center;
+          line-height: 28px;
+          font-weight: normal;
+          border: 1px solid #000;
+          padding: 0;
+          margin-top: -5px;
+          display: inline-block;
+          position: relative;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #000;
+            color: white;
+          }
+        }
+      }
+    }
   }
 }
 

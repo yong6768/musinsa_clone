@@ -58,7 +58,44 @@ function Header() {
         </div>
       </div>
       <div className="user-menu">
-
+        <ul className="user-menu-list clearfix">
+          <li className="loginBtn">
+            <Link to={"/member/signIn"}>
+              로그인
+            </Link>
+          </li>
+          <li>
+            <Link to={"/member/mypage"}>
+              <span>마이페이지</span>
+            </Link>
+          </li>
+          <li>
+            <Link to={"/member/mypage"}>
+              <span>최근 본 상품</span>
+            </Link>
+          </li>
+          <li>
+            <Link to={"/member/mypage"}>
+              <span className="like">좋아요</span>
+            </Link>
+          </li>
+          <li>
+            <Link to={"/member/mypage"}>
+              <span>장바구니</span>
+              <span className="cart-count">0</span>
+            </Link>
+          </li>
+          <li>
+            <Link to={"/member/mypage"}>
+              <span>주문배송조회</span>
+            </Link>
+          </li>
+          <li>
+            <Link to={"/member/mypage"}>
+              <span>고객센터</span>
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   )
