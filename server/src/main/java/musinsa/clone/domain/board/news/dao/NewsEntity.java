@@ -1,21 +1,18 @@
 package musinsa.clone.domain.board.news.dao;
 
 import lombok.Getter;
-import lombok.Setter;
 import musinsa.clone.domain.board.BoardEntity;
+import musinsa.clone.domain.board.news.category.NewsCategory;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Entity
+@Entity(name="NEWS")
 @Table(name="NEWS")
+@DiscriminatorValue("NEWS")
 public class NewsEntity extends BoardEntity {
 
-    @JoinColumn(name="news_category_id")
-    @OneToOne
+    @Column(name="CATEGORY_NAME")
+    @Enumerated(EnumType.STRING)
     @Getter
-    @Setter
     private NewsCategory newsCategory;
 }

@@ -1,5 +1,10 @@
+database: postgresql
+
 spring:
   datasource:
+    schema: classpath*:db/${database}/schema.sql
+    data: classpath*:db/${database}/data.sql
+    initialization-mode: always
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/musinsa
     username: postgres
@@ -7,9 +12,11 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     properties:
       hibernate:
+        show_sql: true
+        format_sql: true
         temp:
           use_jdbc_metadata_defaults: false
   thymeleaf:
