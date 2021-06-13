@@ -10,6 +10,17 @@ html {
 
 body {
   margin: 0px;
+  font-size: 12px;
+  font-family: '-apple-system',HelveticaNeue,Roboto,"Noto Sans KR",helvetica,Gulim,sans-serif;
+}
+
+input {
+  padding: 0px;
+  outline: none;
+}
+
+input[type="text"]{
+  text-indent: 3px;
 }
 
 ul, li {
@@ -19,6 +30,11 @@ ul, li {
 dl, ol, ul, dt, dd, p {
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .clearfix::before, .clearfix::after {
@@ -39,6 +55,193 @@ dl, ol, ul, dt, dd, p {
   float:right !important
 }
 
+.n-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  padding: 0 9px 0 9px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  font-size: 15px;
+  transition: border .2s ease-in-out;
+}
+
+.row {
+  flex-wrap: wrap;
+}
+
+//////////////////////// Member
+
+.member-wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+
+  .member-area-wrapper {
+    background-color: white;
+    min-width: 400px;
+    min-height: 100vh;
+
+    .member-area {
+      padding: 62px 45px 100px 45px;
+    }
+  }
+}
+
+.member-area {
+
+  .pt-20 {
+    padding-top: 20px;
+  }
+
+  .checkbox-row {
+    padding-top: 15px;
+    line-height: 21px;
+  }
+
+  .auto-checkbox {
+    display: none;
+  }
+
+  .auto-label {
+    display: inline-flex;
+    
+
+    &:before {
+      content: '';
+      border: 1px solid #ccc;
+      width: 18px;
+      height: 18px;
+      background: #f1f1f1;
+      border-radius: 100%;
+      display: block;
+      position: relative;
+      left: -3px;
+    }
+  }
+
+  .member-header {
+    height: 80px;
+
+    .header-area {
+      h1.title {
+        font-size: 32px;
+        text-align: center;
+      }
+      h2.title {
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+
+    .header-tab {
+      display: flex;
+      width: 375px;
+
+      .header-tab-link {
+        padding: 11px 10px 10px 10px;
+        font-weight: 700;
+        font-size: 16px;
+        color: #bbb;
+        text-align: center;
+        flex: 1 1;
+        border-bottom: 1px solid #bbb;
+        cursor: pointer;
+
+        &.active {
+          color: #000;
+          border-bottom: 2px solid #000;
+        }
+      }
+    }
+  }
+
+  .member-form {
+    display: flex;
+    justify-content: center;
+
+    .user, .anonymous {
+      width: 350px;
+
+      .n-input {
+        margin-top: 15px;
+      }
+
+      .submitBtn {
+        margin-top: 15px;
+        background-color: #000;
+        border: 1px solid #000;
+        color: #fff;
+        font-size: 18px;
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+      }
+    }
+
+    .signUp {
+      width: 350px;
+
+      .submitBtn {
+        margin-top: 15px;
+        background-color: #000;
+        border: 1px solid #000;
+        color: #fff;
+        font-size: 18px;
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+      }
+      
+    }
+  }
+
+  .login-help-feature {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 21px;
+    color: #aaa;
+
+    .login-find {
+        
+      span {
+        display: inline-block;
+        width: 1px;
+        height: 14px;
+        background-color: #d8d8d8;
+        vertical-align: middle;
+        padding-top: 5px;
+        top: -2px;
+      }
+
+      a {
+        padding: 5px 10px;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  .login-guide-text {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 40px;
+    text-align: center;
+
+    a {
+      margin-left: 4px;
+      color: #0078ff;
+    }
+  }
+}
+
+//////////////////////// header
 
 .top-header {
   min-width: $header-min-width;
@@ -51,11 +254,105 @@ dl, ol, ul, dt, dd, p {
     display: block;
     padding: 23px 0 23px 0;
     background-color: #000000;
+
+    h1.title {
+      background: url('//image.musinsa.com/mfile_outsrc/img/logo-musinsa-magazine-white@2x.png') no-repeat center;
+      background-size: 255px auto;
+      margin: 0 0 0 20px;
+      display: block;
+      position: relative;
+      float: left;
+      width: 255px;
+      height: 19px;
+      text-indent: -10000000em;
+      top: 6px;
+    }
+
+    .search-wrapper {
+      margin-left: 19px;
+      position: relative;
+      float: left;
+
+      .search-input-wrapper {
+
+        .search-input {
+          width: 218px;
+          background: #fff;
+          height: 30px;
+          line-height: 32px;
+          box-sizing: content-box;
+          border: 1px solid #373737;
+        }
+      }
+    }
+
+
+    .gnb {
+      float: right;
+      margin-right: 32px;
+      line-height: 32px;
+
+      .gnb-list {
+        li {
+          font-size: 18px;
+          font-weight: bold;
+          float: left;
+          position: relative;
+          font-family: 'Malgun Gothic','맑은 고딕', sans-serif;
+
+          a {
+            padding: 0 9px;
+            display: inline-block;
+            line-height: 14px;
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+      }
+    }
   }
   
   .user-menu {
     width: 100%;
-    height: 53px;
+    height: 35px;
+    font-size: 14px;
+
+    .user-menu-list {
+      margin: 18px 15px 18px 20px;
+
+      li {
+        line-height: 14px;
+        height: 14px;
+        margin-left: -4px;
+        display: inline-block;
+        zoom: 1;
+        border-left: 1px solid #dddddd;
+
+        a {
+          padding: 0 10px;
+          display: block;
+        }
+
+        &.loginBtn {
+          width: 148px;
+          height: 28px;
+          text-align: center;
+          line-height: 28px;
+          font-weight: normal;
+          border: 1px solid #000;
+          padding: 0;
+          margin-top: -5px;
+          display: inline-block;
+          position: relative;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #000;
+            color: white;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -91,57 +388,6 @@ dl, ol, ul, dt, dd, p {
     border-right: 1px solid #dddddd;
     width: calc(100% - #{$main-right-width} - 2px);
     float: left;
-
-
-    .content-wrapper.tab.news {
-      .list-item {
-        padding: 15px 0;
-        border-bottom: 1px solid #dddddd;
-        width: 100%;
-        float: left;
-        font-size: 12px;
-
-        .articleImg {
-          width: 210px !important;
-          height: 140px !important;
-          background: #f1f1f1;
-          margin-right: 15px;
-          float: left;
-
-          a {
-            display: block;
-            height: 140px;
-          }
-        }
-
-        .articleInfo {
-          color: #b2b2b2;
-
-          .title {
-            font-size: 14px;
-            color: #000000;
-            font-weight: bold;
-          }
-
-          .subInfo {
-            margin-top: 8px;
-          }
-
-          .description {
-            height: 57px;
-            margin-top: 9px;
-            overflow: hidden;
-            word-wrap: break-word;
-            word-break: break-all;
-          }
-
-          a {
-            color: #b2b2b2;
-            text-decoration: none;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -192,7 +438,7 @@ dl, ol, ul, dt, dd, p {
   }
 }
 
-.content-wrapper {
+.content-wrapper, .news {
 
   .list-item:hover {
     background: #f3f3f3;
@@ -201,9 +447,111 @@ dl, ol, ul, dt, dd, p {
 
 
 
+////////////// footer
+
 .footer {
   border-top: 1px solid #dddddd;
   display:  table;
   clear: both;
   width: 100%;
+}
+
+
+////////////// magazine
+
+.bread-crumb-wrapper {
+  padding: 0 15px;
+  border-bottom: 1px solid #dddddd;
+  font-family: 'Musinsa', "gulim", "굴림",sans-serif;
+  line-height: 49px;
+
+  .bread-crumb {
+    margin-right: 8px;
+    font-size: 14px;
+    vertical-align: baseline;
+
+    &::before {
+      content: ">";
+      margin-right: 8px;
+    }
+
+    &:first-child::before {
+      content: "";
+      margin-right: 0;
+    }
+  }
+}
+
+.magazine-main-content {
+  .header {
+
+    .options {
+      padding: 18px 0 5px;
+      margin-left: 15px;
+
+      .cntLabel {
+        font-weight: bold;
+        font-family: gulim, sans-serif;
+      }
+    }
+  }
+}
+
+//// magazine -> news
+.magazine-main-content .news {
+  .section {
+    padding: 0 15px;
+  }
+
+
+}
+
+.news {
+  .list-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #dddddd;
+    width: 100%;
+    float: left;
+    font-size: 12px;
+
+    .articleImg {
+      width: 210px !important;
+      height: 140px !important;
+      background: #f1f1f1;
+      margin-right: 15px;
+      float: left;
+
+      a {
+        display: block;
+        height: 140px;
+      }
+    }
+
+    .articleInfo {
+      color: #b2b2b2;
+
+      .title {
+        font-size: 14px;
+        color: #000000;
+        font-weight: bold;
+      }
+
+      .subInfo {
+        margin-top: 8px;
+      }
+
+      .description {
+        height: 57px;
+        margin-top: 9px;
+        overflow: hidden;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+
+      a {
+        color: #b2b2b2;
+        text-decoration: none;
+      }
+    }
+  }
 }
