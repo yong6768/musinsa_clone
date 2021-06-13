@@ -13,4 +13,10 @@ public class AdminMemberController {
 
         return "member/list";
     }
+
+    @GetMapping("/signIn")
+    public String memberSignIn() {
+
+        return "member/signIn";
+    }
 }
