@@ -1,1 +1,0 @@
-INSERT INTO MEMBER (MEMBER_ID, PASSWORD, NAME, NICKNAME, MEMBER_TYPE) VALUES ('admin', 'admin', '홍길동', '관리자 닉네임', 'ADMIN');
