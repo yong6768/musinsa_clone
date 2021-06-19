@@ -7,6 +7,8 @@ import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="BOARD")
@@ -36,6 +38,15 @@ public class BoardEntity {
     @Column(name="HIT", nullable = false)
     @Getter @Setter
     private int hit;
+
+    @ElementCollection
+    @CollectionTable(name = "tag",
+            joinColumns = {
+                @JoinColumn(name="BOARD_ID")
+            }
+    )
+    @Column(name="name", length = 20)
+    private List<String> tags = new ArrayList<>();
 
     @Column(name="CREATED_AT", nullable = false)
     @CreatedDate

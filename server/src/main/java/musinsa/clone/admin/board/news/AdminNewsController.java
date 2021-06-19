@@ -11,6 +11,7 @@ public class AdminNewsController {
 
     @GetMapping("/list")
     public String list() {
+
         return "/board/news/list";
     }
 
