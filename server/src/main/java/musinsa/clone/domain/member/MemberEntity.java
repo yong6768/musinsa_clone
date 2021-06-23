@@ -1,44 +1,43 @@
 package musinsa.clone.domain.member;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name="member")
-@NoArgsConstructor
+@Table(name="MEMBER")
+@Getter
 public class MemberEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Getter
-    private Long id;
+    @Id @GeneratedValue
+    @Column(name="MEMBER_ID")
+    private Long memberId;
 
+    @Column(name="USERNAME", nullable = false, length = 20)
+    private String username;
 
-    @Column(name="member_id", nullable = false, length = 20)
-    @Getter
-    @Setter
-    private String memberId;
-
-    @Column(name="password", nullable = false, length = 100)
-    @Getter
-    @Setter
+    @Column(name="PASSWORD", nullable = false, length = 100)
     private String password;
 
-    @Column(name="member_type", nullable = false)
+    @Column(name="MEMBER_TYPE", nullable = false)
     @Enumerated(EnumType.STRING)
-    @Getter
-    @Setter
     private MemberType memberType;
 
-    @Column(name="name", nullable = false, length = 20)
-    @Getter
-    @Setter
+    @Column(name="NAME", nullable = false, length = 20)
     private String name;
 
-    @Column(name="nickname", nullable = false, length = 20)
-    @Getter
-    @Setter
+    @Column(name="NICKNAME", nullable = false, length = 20)
     private String nickname;
+
+    protected  MemberEntity() {}
+
+    protected MemberEntity(String username, String password, MemberType memberType, String name, String nickname) {
+        this.username = username;
+        this.password = password;
+        this.memberType = memberType;
+        this.name = name;
+        this.nickname = nickname;
+    }
+
+    public static MemberEntity create(String username, String password, MemberType memberType, String name, String nickname) {
+        return new MemberEntity(username, password, memberType, name, nickname);
+    }
 }
