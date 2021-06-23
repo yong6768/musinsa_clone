@@ -19,7 +19,8 @@ public class BoardEntity {
     @Id
     @GeneratedValue
     @Getter
-    private Long id;
+    @Column(name="BOARD_ID")
+    private Long boardId;
 
     @JoinColumn(name = "WRITER_ID", nullable = false)
     @ManyToOne
