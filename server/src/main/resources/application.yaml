@@ -3,6 +3,7 @@ database: postgresql
 spring:
   datasource:
     schema: classpath*:db/${database}/schema.sql
+    data: classpath*:db/${database}/data.sql
     initialization-mode: always
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/musinsa

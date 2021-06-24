@@ -1,6 +1,9 @@
-package musinsa.clone.domain.member;
+package musinsa.clone.domain.member.dao;
 
 import lombok.Getter;
+import musinsa.clone.domain.member.MemberType;
+import musinsa.clone.domain.member.dto.MemberSignUp;
+
 import javax.persistence.*;
 
 @Entity
@@ -37,7 +40,17 @@ public class MemberEntity {
         this.nickname = nickname;
     }
 
-    public static MemberEntity create(String username, String password, MemberType memberType, String name, String nickname) {
+    public static MemberEntity of(String username, String password, MemberType memberType, String name, String nickname) {
         return new MemberEntity(username, password, memberType, name, nickname);
+    }
+
+    public static MemberEntity of(MemberSignUp memberSignUp) {
+        return new MemberEntity(
+                memberSignUp.getUsername(),
+                memberSignUp.getPassword(),
+                memberSignUp.getMemberType(),
+                memberSignUp.getName(),
+                memberSignUp.getNickname()
+        );
     }
 }

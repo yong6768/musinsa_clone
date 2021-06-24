@@ -1,8 +1,8 @@
 package musinsa.clone.initData;
 
-import musinsa.clone.domain.member.MemberEntity;
-import musinsa.clone.domain.member.MemberRepository;
+import musinsa.clone.domain.member.dao.MemberEntity;
 import musinsa.clone.domain.member.MemberType;
+import musinsa.clone.domain.member.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -24,15 +24,8 @@ public class MemberDataInit {
         save("admin", "admin", "홍길동", "홍길동 닉네임", MemberType.ADMIN);
     }
 
-    private static void save(String memberId, String password, String name, String nickname, MemberType memberType) {
-        MemberEntity memberEntity = MemberEntity.builder()
-                .memberId(memberId)
-                .password(passwordEncoder.encode(password))
-                .name(name)
-                .nickname(nickname)
-                .memberType(memberType)
-                .build();
-
+    private static void save(String username, String password, String name, String nickname, MemberType memberType) {
+        MemberEntity memberEntity = MemberEntity.of(username, passwordEncoder.encode(password), memberType, name, nickname);
         memberRepository.save(memberEntity);
     }
 }
