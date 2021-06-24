@@ -1,1 +1,6 @@
 
+.bootstrap-tagsinput .tag {
+    background-color: #ccc;
+    border-radius: 0.2rem;
+    padding: 4px;
+}
