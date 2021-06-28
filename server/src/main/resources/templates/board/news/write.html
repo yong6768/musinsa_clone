@@ -37,23 +37,25 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form>
+                            <form th:action="@{/admin/news/write}" method="post" th:object="${newsWrite}">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="news-title">제목</label>
-                                        <input type="text" class="form-control" id="news-title" name="title" placeholder="제목을 입력하세요.">
+                                        <label for="title">제목</label>
+                                        <input type="text" class="form-control" th:field="*{title}" id="title" name="title" placeholder="제목을 입력하세요.">
                                     </div>
                                     <div class="form-group">
-                                        <label for="news-content">내용</label>
-                                        <textarea id="news-content" placeholder="내용을 입력하세요."></textarea>
+                                        <label for="content">내용</label>
+                                        <textarea id="content" name="content" th:field="*{content}" placeholder="내용을 입력하세요."></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label>브랜드</label>
-                                        <select class="select2 w-100" multiple="multiple" data-placeholder="브랜드를 선택하세요."></select>
+                                        <label for="brands">브랜드</label>
+                                        <select class="select2 w-100" name="brands" id="brands" th:field="*{brands}" multiple="multiple" data-placeholder="브랜드를 선택하세요.">
+                                            <option th:each="brandListElem: ${brandList}" th:value="${brandListElem.id}" th:text="${brandListElem.name}">name</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>태그</label>
-                                        <input type="text" class="form-control" id="tags" name="tags" value=""/>
+                                        <label for="tags">태그</label>
+                                        <input type="text" class="form-control" th:field="*{tags}" id="tags" name="tags" value=""/>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
@@ -85,7 +87,7 @@
 <script>
     $(function () {
         // Summernote
-        $('#news-content').summernote({
+        $('#content').summernote({
             height: '400px'
         })
 

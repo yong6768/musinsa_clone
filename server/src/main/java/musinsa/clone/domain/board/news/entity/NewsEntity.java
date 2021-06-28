@@ -1,4 +1,4 @@
-package musinsa.clone.domain.board.news.dao;
+package musinsa.clone.domain.board.news.entity;
 
 import lombok.Getter;
 import musinsa.clone.domain.board.BoardEntity;

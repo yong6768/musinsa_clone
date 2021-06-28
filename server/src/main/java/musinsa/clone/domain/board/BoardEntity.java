@@ -2,7 +2,7 @@ package musinsa.clone.domain.board;
 
 import lombok.Getter;
 import lombok.Setter;
-import musinsa.clone.domain.member.dao.MemberEntity;
+import musinsa.clone.domain.member.entity.MemberEntity;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;

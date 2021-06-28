@@ -1,7 +1,7 @@
 package musinsa.clone.domain.member.dto;
 
 import lombok.Getter;
-import musinsa.clone.domain.member.dao.MemberEntity;
+import musinsa.clone.domain.member.entity.MemberEntity;
 import musinsa.clone.domain.member.MemberType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

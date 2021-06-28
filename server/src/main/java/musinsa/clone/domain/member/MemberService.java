@@ -1,13 +1,14 @@
 package musinsa.clone.domain.member;
 
 import lombok.RequiredArgsConstructor;
-import musinsa.clone.domain.member.dao.MemberEntity;
 import musinsa.clone.domain.member.dto.MemberSignUp;
+import musinsa.clone.domain.member.entity.MemberEntity;
 import musinsa.clone.domain.member.dto.UserDetailsImpl;
 import musinsa.clone.domain.member.repository.MemberRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,9 +16,10 @@ import org.springframework.stereotype.Service;
 public class MemberService implements UserDetailsService {
 
     private final MemberRepository memberRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public void save(MemberSignUp memberSignUp) {
-        MemberEntity memberEntity = MemberEntity.of(memberSignUp);
+        MemberEntity memberEntity = memberSignUp.toEntity(passwordEncoder);
         memberRepository.save(memberEntity);
     }
 
