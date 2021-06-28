@@ -24,3 +24,6 @@ spring:
     mode: HTML5
   jwt:
     secret: musinsa_clone
+
+custom:
+  init-data: true

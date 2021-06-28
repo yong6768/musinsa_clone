@@ -2,7 +2,7 @@ package musinsa.clone.domain.board;
 
 import lombok.Getter;
 import lombok.Setter;
-import musinsa.clone.domain.member.MemberEntity;
+import musinsa.clone.domain.member.entity.MemberEntity;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -19,7 +19,8 @@ public class BoardEntity {
     @Id
     @GeneratedValue
     @Getter
-    private Long id;
+    @Column(name="BOARD_ID")
+    private Long boardId;
 
     @JoinColumn(name = "WRITER_ID", nullable = false)
     @ManyToOne

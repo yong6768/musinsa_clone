@@ -23,17 +23,6 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-
-
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                .csrf().disable()
-//                .antMatcher("/api/**")
-//                    .authorizeRequests()
-//                .antMatchers("/api/")
-//    }
-
     @Configuration
     public static class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
         @Autowired

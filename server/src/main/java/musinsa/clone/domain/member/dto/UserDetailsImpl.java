@@ -1,7 +1,7 @@
 package musinsa.clone.domain.member.dto;
 
 import lombok.Getter;
-import musinsa.clone.domain.member.MemberEntity;
+import musinsa.clone.domain.member.entity.MemberEntity;
 import musinsa.clone.domain.member.MemberType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -12,13 +12,13 @@ import java.util.List;
 
 @Getter
 public class UserDetailsImpl implements UserDetails {
-    private String memberId;
-    private String memberPassword;
+    private String username;
+    private String password;
     private MemberType memberType;
 
     public UserDetailsImpl(MemberEntity memberEntity) {
-        this.memberId = memberEntity.getMemberId();
-        this.memberPassword = memberEntity.getPassword();
+        this.username = memberEntity.getUsername();
+        this.password = memberEntity.getPassword();
         this.memberType = memberEntity.getMemberType();
     }
 
@@ -30,12 +30,12 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public String getPassword() {
-        return getMemberPassword();
+        return this.password;
     }
 
     @Override
     public String getUsername() {
-        return getMemberId();
+        return this.username;
     }
 
     @Override

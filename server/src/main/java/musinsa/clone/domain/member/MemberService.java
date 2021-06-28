@@ -2,10 +2,13 @@ package musinsa.clone.domain.member;
 
 import lombok.RequiredArgsConstructor;
 import musinsa.clone.domain.member.dto.MemberSignUp;
+import musinsa.clone.domain.member.entity.MemberEntity;
 import musinsa.clone.domain.member.dto.UserDetailsImpl;
+import musinsa.clone.domain.member.repository.MemberRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,19 +16,16 @@ import org.springframework.stereotype.Service;
 public class MemberService implements UserDetailsService {
 
     private final MemberRepository memberRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public void save(MemberSignUp memberSignUp) {
-        MemberEntity memberEntity = memberSignUp.toDAO();
+        MemberEntity memberEntity = memberSignUp.toEntity(passwordEncoder);
         memberRepository.save(memberEntity);
     }
 
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("username = " + username);
-        MemberEntity memberEntity =  memberRepository.findByMemberId(username).orElseThrow();
-        System.out.println(memberEntity.getMemberId());
-        System.out.println(memberEntity.getPassword());
+        MemberEntity memberEntity =  memberRepository.findByUsername(username).orElseThrow();
         return new UserDetailsImpl(memberEntity);
     }
 }
